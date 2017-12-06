@@ -4,7 +4,7 @@ import CommentBox from '../../src/components/comment_box'
 describe('CommentBox', () => {
   let component;
 
-  // The beforeEach runs before every it
+  // The beforeEach runs before every 'it'
   beforeEach(() => {
     // It's returning a jquery object that contains our react component (jquery version of our component)
     component = renderComponent(CommentBox);
