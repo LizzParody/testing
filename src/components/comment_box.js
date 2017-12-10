@@ -7,18 +7,27 @@ export default class CommentBox extends Component {
     this.state = { comment: '' };
   }
   handleChange(event) {
+    // the `value` here is a controll component that comes from above
     this.setState({ comment: event.target.value })
+  }
+
+  handleSubmit(event){
+    // prevent the form to submit itself to the backend
+    event.preventDefault();
+    this.setState({ comment: '' })
   }
 
   render() {
     return(
-      <div className="comment-box">
+      // change the 'div' for a 'form' because form responds to the submit event
+      <form onSubmit={this.handleSubmit.bind(this)} className="comment-box">
         <textarea
           value={this.state.comment}
           onChange={this.handleChange.bind(this)}
         />
-        <button>Submit Comment</button>
-      </div>
+        { /* when the button is clicked, it should submit the form */ }
+        <button action="submit">Submit Comment</button>
+      </form>
     )
   }
 }
