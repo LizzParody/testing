@@ -36,6 +36,4 @@ class CommentBox extends Component {
   }
 }
 
-mapDispatchToProps
-
 export default connect(null, actions)(CommentBox)
