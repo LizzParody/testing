@@ -25,12 +25,15 @@ class CommentBox extends Component {
     return(
       // change the 'div' for a 'form' because form responds to the submit event
       <form onSubmit={this.handleSubmit.bind(this)} className="comment-box">
+        <h4>Add a comment</h4>
         <textarea
           value={this.state.comment}
           onChange={this.handleChange.bind(this)}
         />
-        { /* when the button is clicked, it should submit the form */ }
-        <button action="submit">Submit Comment</button>
+        <div>
+          { /* when the button is clicked, it should submit the form */ }
+          <button action="submit">Submit Comment</button>
+        </div>
       </form>
     )
   }
